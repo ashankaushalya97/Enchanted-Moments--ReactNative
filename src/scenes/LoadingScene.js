@@ -1,7 +1,14 @@
 import React,{Component} from 'react';
 import { View ,Text,StyleSheet,Image,Animated} from 'react-native';
+import LottieView from 'lottie-react-native';
 
 import logo from "../images/Logo.png";
+import { block } from 'react-native-reanimated';
+import { Actions } from 'react-native-router-flux';
+
+const switchToAuth = () => {
+    Actions.replace("auth");
+}
 
 class LoadingScene extends Component{
 
@@ -24,20 +31,21 @@ class LoadingScene extends Component{
 
             Animated.timing(LogoText,{
                 toValue:1,
-                duration:1200,
+                duration:2000,
                 useNativeDriver:false,
             }),
         ]).start(() => {
             this.setState({
                 loadingSpinner:true,
             });
+            setTimeout(switchToAuth,1000);
         });
     }
 
     render(){
         return (
             <View style={styles.container}>
-                <Animated.View style={{
+                {/* <Animated.View style={{
                     opacity:this.state.LogoAnime,
                     top: this.state.LogoAnime.interpolate({
                         inputRange: [0,1],
@@ -45,10 +53,14 @@ class LoadingScene extends Component{
                     }),
                 }}>
                     <Image source={logo}/>
-                </Animated.View>
-                <Animated.View style={{opacity: this.state.LogoText}}>
-                    <Text style={styles.logoText}>Enchanted Moments</Text>
-                </Animated.View>
+                </Animated.View> */}
+                    <LottieView style={styles.logoLottie} source={require('../images/5459-camera.json')} autoPlay loop />
+                <View>
+                    <Animated.View style={{opacity: this.state.LogoText}}>
+                        <Text style={styles.logoText}>Enchanted Moments</Text>
+                    </Animated.View>
+                </View>
+                
             </View>
         );
     }
@@ -59,16 +71,25 @@ export default LoadingScene;
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        backgroundColor:'#5257F2',
+        backgroundColor:'#4FC3F7',
         justifyContent:'center',
         alignItems:'center',
     },
 
     logoText: {
-        fontFamily:'Sans-serif',
-        color: '#ffffff',
-        fontSize: 30,
+        fontFamily:"DancingScript-Bold",
+        color: '#FFFFFF',
+        fontSize: 35,
         marginTop: 29.1,
-        fontWeight: 'bold',
+        fontWeight:'500',
+        paddingBottom:10,
+        textShadowColor:"#000000",
+        textShadowOffset: {width:6, height:6},
+        textShadowRadius:10,
+    },  
+    logoLottie: {
+        // width:200,
+        // height:200,
+        
     },
 });

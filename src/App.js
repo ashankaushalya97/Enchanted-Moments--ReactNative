@@ -11,7 +11,7 @@ class App extends Component {
             <Router>
                 <Scene key="root">
                     <Scene key="loading" component={LoadingScene} initial={true} hideNavBar={true} ></Scene>
-                    <Scene key="auth" component={AuthScene} hideNavBar={true} ></Scene>
+                    <Scene key="auth" component={AuthScene} hideNavBar={true} direction='vertical'></Scene>
                 </Scene>
             </Router>
         );
