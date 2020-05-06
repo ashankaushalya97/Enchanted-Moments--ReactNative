@@ -1,8 +1,14 @@
 import React,{Component} from 'react';
 import {View,Text,StyleSheet} from 'react-native';
 import {Form,Item,Input,Body,CheckBox, Button} from 'native-base';
+import {Actions} from 'react-native-router-flux';
+
+const formSubmit = () => {
+    Actions.home();
+}
 
 class AuthScene extends Component {
+
     render() {
         return (
             <View style={styles.container}>
@@ -33,7 +39,7 @@ class AuthScene extends Component {
 
                             </View>
                             <View style={styles.Button}>
-                                <Button block style={styles.mainBtn}>
+                                <Button block style={styles.mainBtn} onPress={formSubmit} >
                                     <Text style={styles.btnText}>Submit</Text>
                                 </Button>
                             </View>
