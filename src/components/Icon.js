@@ -1,22 +1,23 @@
-import React from 'react';
+import React,{Component} from 'react';
 // import * as Font from 'expo-font';
 // import { createIconSetFromIcoMoon } from '@expo/vector-icons';
 // import { Icon } from 'galio-framework';
+import {Text,View} from 'react-native';
 
 // import GalioConfig from '../../assets/fonts/galioExtra.json';
 
-const GalioExtra = require('../../assets/fonts/galioExtra.ttf');
+// const GalioExtra = require('../../assets/fonts/galioExtra.ttf');
 // const IconGalioExtra = createIconSetFromIcoMoon(GalioConfig, 'GalioExtra');
 
-export default class Icon extends React.Component {
-  state = {
-    fontLoaded: false,
-  }
+export default class Icon extends Component {
+  // state = {
+  //   fontLoaded: false,
+  // }
 
-  async componentDidMount() {
-    // await Font.loadAsync({ GalioExtra: GalioExtra });
-    // this.setState({ fontLoaded: true });
-  }
+  // async componentDidMount() {
+  //   // await Font.loadAsync({ GalioExtra: GalioExtra });
+  //   // this.setState({ fontLoaded: true });
+  // }
 
   render() {
     // const { name, family, ...rest } = this.props;
@@ -28,6 +29,10 @@ export default class Icon extends React.Component {
     //   return <Icon name={name} family={family} {...rest} />;
     // }
 
-    return null;
+    return (
+      <View>
+        <Text>ICONS</Text>
+      </View>
+    );
   }
 }

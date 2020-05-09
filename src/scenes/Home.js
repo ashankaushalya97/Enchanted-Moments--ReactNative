@@ -4,71 +4,108 @@ import { Button, Block, Text, Input, theme } from 'galio-framework';
 
 // import { Icon,Product } from '../components';
 // import Icon from ' ../components/Icon';
-// import Product from '../components/Product';
+import Product from '../components/Product';
 
 const { width } = Dimensions.get('screen');
 import products from '../constants/products';
 
 export default class Home extends React.Component {
-//   renderSearch = () => {
-//     const { navigation } = this.props;
-//     const iconCamera = <Icon size={16} color={theme.COLORS.MUTED} name="zoom-in" family="material" />
 
-//     return (
-//       <Input
-//         right
-//         color="black"
-//         style={styles.search}
-//         iconContent={iconCamera}
-//         placeholder="What are you looking for?"
+  // renderSearch = () => {
+    
+  //   const { navigation } = this.props;
+  //   const iconCamera = <Icon size={16} color={theme.COLORS.MUTED} name="zoom-in" family="material" />
+
+  //   return (
+  //     <Input
+  //       right
+  //       color="black"
+  //       style={styles.search}
+  //       iconContent={iconCamera}
+  //       placeholder="What are you looking for?"
         
-//       />
-//     )
-//   }
+  //     />
+  //   )
+  // }
   
-//   renderTabs = () => {
-//     const { navigation } = this.props;
+  // renderTabs = () => {
+    
+  //   const { navigation } = this.props;
 
-//     return (
-//       <Block row style={styles.tabs}>
-//         <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('Pro')}>
-//           <Block row middle>
-//             <Icon name="grid" family="feather" style={{ paddingRight: 8 }} />
-//             <Text size={16} style={styles.tabTitle}>Categories</Text>
-//           </Block>
-//         </Button>
-//         <Button shadowless style={styles.tab} >
-//           <Block row middle>
-//             <Icon size={16} name="camera-18" family="GalioExtra" style={{ paddingRight: 8 }} />
-//             <Text size={16} style={styles.tabTitle}>Best Deals</Text>
-//           </Block>
-//         </Button>
-//       </Block>
-//     )
-//   }
+  //   return (
+  //     // <Block row style={styles.tabs}>
+  //     //   <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('Pro')}>
+  //     //     <Block row middle>
+  //     //       {/* <Icon name="grid" family="feather" style={{ paddingRight: 8 }} /> */}
+  //     //       <Text size={16} style={styles.tabTitle}>Categories</Text>
+  //     //     </Block>
+  //     //   </Button>
+  //     //   <Button shadowless style={styles.tab} >
+  //     //     <Block row middle>
+  //     //       {/* <Icon size={16} name="camera-18" family="GalioExtra" style={{ paddingRight: 8 }} /> */}
+  //     //       <Text size={16} style={styles.tabTitle}>Best Deals</Text>
+  //     //     </Block>
+  //     //   </Button>
+  //     // </Block>
+  //   )
+  // }
 
-//   renderProducts = () => {
-//     return (
-//       <ScrollView
-//         showsVerticalScrollIndicator={false}
-//         contentContainerStyle={styles.products}>
-//         <Block flex>
-//           <Product product={products[0]} horizontal />
-//           <Block flex row>
-//             <Product product={products[1]} style={{ marginRight: theme.SIZES.BASE }} />
-//             <Product product={products[2]} />
-//           </Block>
-//           <Product product={products[3]} horizontal />
-//           <Product product={products[4]} full />
-//         </Block>
-//       </ScrollView>
-//     )
-//   }
+  renderProducts = () => {
+    return (
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.products}>
+        <Block flex>
+          {/* <Text>Dashboard</Text> */}
+          <Product product={products[0]} horizontal />
+          <Block flex row>
+            <Product product={products[1]} style={{ marginRight: theme.SIZES.BASE }} />
+            <Product product={products[2]} />
+          </Block>
+          <Product product={products[3]} horizontal />
+          <Product product={products[4]} full />
+        </Block>
+      </ScrollView>
+    )
+  }
 
   render() {
     return (
       <Block flex center style={styles.home}>
+        {/* <Text>Home</Text> */}
+        {/* {this.renderTabs} */}
         {/* {this.renderProducts()} */}
+        {/* {this.renderSearch} */}
+
+        <Block row style={styles.tabs}>
+          <Text size={18} style={styles.tabTitle} >Home</Text>
+        </Block>
+        <Input
+        right
+        color="black"
+        style={styles.search}
+        // iconContent={iconCamera}
+        placeholder="What are you looking for?"
+        
+      />
+
+      <Block row style={styles.tabs}>
+        <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('Pro')}>
+          <Block row middle>
+            {/* <Icon name="grid" family="feather" style={{ paddingRight: 8 }} /> */}
+            <Text size={16} style={styles.tabTitle}>Categories</Text>
+          </Block>
+        </Button>
+        <Button shadowless style={styles.tab} >
+          <Block row middle>
+            {/* <Icon size={16} name="camera-18" family="GalioExtra" style={{ paddingRight: 8 }} /> */}
+            <Text size={16} style={styles.tabTitle}>Best Deals</Text>
+          </Block>
+        </Button>
+      </Block>
+
+      {this.renderProducts()}
+        
       </Block>
     );
   }
