@@ -22,7 +22,7 @@ class LoadingScene extends Component{
         Animated.parallel([
             Animated.timing(LogoText,{
                 toValue:1,
-                duration:2000,
+                duration:1500,
                 useNativeDriver:false,
             }),
         ]).start(() => {
@@ -53,7 +53,7 @@ export default LoadingScene;
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        backgroundColor:'#4FC3F7',
+        backgroundColor:'#EBEDEF',
         justifyContent:'center',
         alignItems:'center',
     },
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     logoText: {
         fontFamily:"DancingScript-Bold",
         color: '#FFFFFF',
-        fontSize: 35,
+        fontSize: 30,
         marginTop: 29.1,
         fontWeight:'500',
         paddingBottom:10,

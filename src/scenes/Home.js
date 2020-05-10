@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, Dimensions, ScrollView,ImageBackground ,Image} from 'react-native';
 import { Button, Block, Text, Input, theme } from 'galio-framework';
-
+import {Icon ,Header,Container,Body, View} from 'native-base';
 // import { Icon,Product } from '../components';
 // import Icon from ' ../components/Icon';
 import Product from '../components/Product';
+import bg from '../images/b1.jpg';
 
 const { width } = Dimensions.get('screen');
 import products from '../constants/products';
@@ -57,11 +58,11 @@ export default class Home extends React.Component {
         contentContainerStyle={styles.products}>
         <Block flex>
           {/* <Text>Dashboard</Text> */}
-          <Product product={products[0]} horizontal />
-          <Block flex row>
+          <Product product={products[0]} horizontal onPress={() => {alert("Clicked!")}} />
+          {/* <Block flex row>
             <Product product={products[1]} style={{ marginRight: theme.SIZES.BASE }} />
             <Product product={products[2]} />
-          </Block>
+          </Block> */}
           <Product product={products[3]} horizontal />
           <Product product={products[4]} full />
         </Block>
@@ -77,9 +78,25 @@ export default class Home extends React.Component {
         {/* {this.renderProducts()} */}
         {/* {this.renderSearch} */}
 
+
+        
+        <ImageBackground source={require('../images/b1.jpg')} style={{flex:1, resizeMode: 'stretch',width:width,alignContent:'center',justifyContent:'center',alignItems:'center'}}>
+          
+            {/* <Header style={{backgroundColor:"#ffffff", width:width}}> */}
+              <Text size={26} style={styles.tabTitle, {fontFamily: 'GoogleSans-Bold',paddingTop:10,color: '#ffffff', textShadowColor:"#000000",textShadowOffset: {width:2, height:2},textShadowRadius:10, }} > 
+              <Icon name="home" style={{color:'#ffffff'}} /> Home
+              </Text>
+            {/* </Header> */}
+
+            
+        {/* </ImageBackground> */}
+
+{/* 
         <Block row style={styles.tabs}>
-          <Text size={18} style={styles.tabTitle} >Home</Text>
-        </Block>
+
+
+        </Block> */}
+        
         <Input
         right
         color="black"
@@ -87,25 +104,26 @@ export default class Home extends React.Component {
         // iconContent={iconCamera}
         placeholder="What are you looking for?"
         
-      />
+        />
 
-      <Block row style={styles.tabs}>
+      {/* <Block row style={styles.tabs}>
         <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('Pro')}>
           <Block row middle>
-            {/* <Icon name="grid" family="feather" style={{ paddingRight: 8 }} /> */}
+            <Icon name="grid" family="feather" style={{ paddingRight: 8 }} />
             <Text size={16} style={styles.tabTitle}>Categories</Text>
           </Block>
         </Button>
         <Button shadowless style={styles.tab} >
           <Block row middle>
-            {/* <Icon size={16} name="camera-18" family="GalioExtra" style={{ paddingRight: 8 }} /> */}
+            <Icon size={16} name="camera-18" family="GalioExtra" style={{ paddingRight: 8 }} />
             <Text size={16} style={styles.tabTitle}>Best Deals</Text>
           </Block>
         </Button>
-      </Block>
+      </Block> */}
+      
 
       {this.renderProducts()}
-        
+      </ImageBackground>
       </Block>
     );
   }
@@ -120,7 +138,7 @@ const styles = StyleSheet.create({
     width: width - 32,
     marginHorizontal: 16,
     borderWidth: 1,
-    borderRadius: 3,
+    borderRadius: 5,
   },
   header: {
     backgroundColor: theme.COLORS.WHITE,
@@ -158,5 +176,6 @@ const styles = StyleSheet.create({
   products: {
     width: width - theme.SIZES.BASE * 2,
     paddingVertical: theme.SIZES.BASE * 2,
+    paddingTop:10
   },
 });

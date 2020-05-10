@@ -1,7 +1,10 @@
 import React,{Component} from 'react';
-import {View,Text,StyleSheet} from 'react-native';
+import {View,Text,StyleSheet,ImageBackground,Dimensions} from 'react-native';
 import {Form,Item,Input,Body,CheckBox, Button} from 'native-base';
 import {Actions} from 'react-native-router-flux';
+
+import bg from '../images/b1.jpg'
+const { width } = Dimensions.get('screen');
 
 const formSubmit = () => {
     Actions.home();
@@ -12,9 +15,11 @@ class AuthScene extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.top}></View>
+                <ImageBackground source={require('../images/b1.jpg')} style={{flex:1, resizeMode: 'stretch',width:width,alignContent:'center',justifyContent:'center',alignItems:'center'}}>
+
+                {/* <View style={styles.top}></View> */}
                 <View style={styles.middle}>
-                    <Text style={styles.textContainer}>You are ready to go</Text>
+                    <Text style={styles.topTitle}>You are ready to go</Text>
                     <View style={styles.formArea}>
                         <Text style={[styles.textContainer,styles.signin]}>Sign in</Text>
                     
@@ -47,6 +52,7 @@ class AuthScene extends Component {
 
                     </View>
                 </View>
+                </ImageBackground>
                 <View style={styles.bottom}></View>
             </View>
         );
@@ -90,7 +96,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         top: '20%',
         paddingBottom: 40,
-        borderRadius: 20
+        borderRadius: 20,
     },
     signin: {
         top: 0,
@@ -100,10 +106,12 @@ const styles = StyleSheet.create({
     formItems: {
         marginTop: 15,
         borderBottomColor: '#2d3057',
+        paddingRight:5,
+        marginRight:10
     },
     Input: {
         fontFamily: 'Poppins-Bold',
-        fontSize:12,
+        fontSize:12
     },
     loginAs: {
         marginTop: 15,
@@ -128,12 +136,24 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     mainBtn: {
-        backgroundColor: '#1DDCAF',
+        backgroundColor: '#4097F4',
     },
     btnText: {
-        color: '#2D3057',
+        color: '#ffffff',
         fontFamily: 'GoogleSans-Bold',
-        fontSize: 12,
+        fontSize: 16,
+    },
+    topTitle: {
+        color: '#ffffff',
+        fontFamily: 'GoogleSans-Bold',
+        fontSize: 24,
+        marginBottom: 30,
+        position: 'relative',
+        top: '20%',
+        alignSelf: 'center',
+        textShadowColor:"#000000",
+        textShadowOffset: {width:2, height:2},
+        textShadowRadius:10,
     }
 
 });

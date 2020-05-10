@@ -20,9 +20,9 @@ class Product extends React.Component {
           </Block>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback >
-          <Block flex space="between" style={styles.productDescription}>
+          <Block flex space="between" style={styles.productDescription, {alignSelf:'center'}}>
             <Text size={14} style={styles.productTitle}>{product.title}</Text>
-            <Text size={12} muted={!priceColor} color={priceColor}>${product.price}</Text>
+            {/* <Text size={12} muted={!priceColor} color={priceColor}>${product.price}</Text> */}
           </Block>
         </TouchableWithoutFeedback>
       </Block>
@@ -43,6 +43,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexWrap: 'wrap',
     paddingBottom: 6,
+    paddingLeft:5,
+    fontSize:22,
+    fontFamily:'GoogleSans-Regular',
   },
   productDescription: {
     padding: theme.SIZES.BASE / 2,
