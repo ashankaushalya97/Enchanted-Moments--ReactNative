@@ -3,7 +3,6 @@ import {View,Text,StyleSheet,ImageBackground,Dimensions} from 'react-native';
 import {Form,Item,Input,Body,CheckBox, Button} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 
-import bg from '../images/b1.jpg'
 const { width } = Dimensions.get('screen');
 
 const formSubmit = () => {
