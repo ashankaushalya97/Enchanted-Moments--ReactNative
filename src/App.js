@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
-import {View,Text} from 'react-native';
-import {Router,Scene,Stack} from 'react-native-router-flux';
+import {Router,Scene} from 'react-native-router-flux';
 
 import LoadingScene from './scenes/LoadingScene';
 import AuthScene from './scenes/AuthScene';

@@ -1,9 +1,7 @@
 import React,{Component} from 'react';
-import { View ,Text,StyleSheet,Image,Animated} from 'react-native';
+import { View ,Text,StyleSheet,Animated} from 'react-native';
 import LottieView from 'lottie-react-native';
 
-import logo from "../images/Logo.png";
-import { block } from 'react-native-reanimated';
 import { Actions } from 'react-native-router-flux';
 
 const switchToAuth = () => {

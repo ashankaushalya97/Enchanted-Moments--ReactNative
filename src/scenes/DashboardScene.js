@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Image} from 'react-native';
-import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Left } from 'native-base';
 
 import card1 from '../images/card1.jpg';
 

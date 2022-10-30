@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Dimensions, ScrollView,ImageBackground ,Image} from 'react-native';
-import { Button, Block, Text, Input, theme } from 'galio-framework';
-import {Icon ,Header,Container,Body, View} from 'native-base';
+import { StyleSheet, Dimensions, ScrollView,ImageBackground } from 'react-native';
+import { Block, Text, Input, theme } from 'galio-framework';
+import {Icon } from 'native-base';
 // import { Icon,Product } from '../components';
 // import Icon from ' ../components/Icon';
 import Product from '../components/Product';
